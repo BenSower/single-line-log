@@ -12,6 +12,8 @@ Node.js module that keeps writing to the same line in the console (or a stream).
 
 ``` js
 var log = require('single-line-log').stdout;
+var fs = require('fs');
+
 // or pass any stream:
 // var log = require('single-line-log')(process.stdout);
 
@@ -23,8 +25,8 @@ rs.on('data', function(data) {
 	read += data.length;
 	var percentage = Math.floor(100*read/size);
 
-	// Keep writing to the same two lines in the console
-	log('Writing to super large file\n[' + percentage + '%]', read, 'bytes read');
+	// Keep writing the same two lines in the console
+	log('Reading super large file\n[' + percentage + '%]', read, 'bytes read');
 });
 ```
 
